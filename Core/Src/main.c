@@ -211,11 +211,11 @@ static uint8_t rainbow_effect_right() {
 	  for(uint16_t j=0;j<24;j++) {
 	    ind = 14 - (int16_t)(effStep - j * 1.75) % 14;
 	    switch((int)((ind % 14) / 4.666666666666667)) {
-	      case 0: /*factor1 = 1.0 - ((float)(ind % 14 - 0 * 4.666666666666667) / 4.666666666666667);
+	      case 0: factor1 = 1.0 - ((float)(ind % 14 - 0 * 4.666666666666667) / 4.666666666666667);
 	              factor2 = (float)((int)(ind - 0) % 14) / 4.666666666666667;
 	              Set_LED(j, 255 * factor1 + 0 * factor2, 0 * factor1 + 255 * factor2, 0 * factor1 + 0 * factor2);
 	              WS2812_Send();
-	              break;*/
+	              break;
 	    	  factor1 = 1.0 - ((float)(ind % 14 - 2 * 4.666666666666667) / 4.666666666666667);
 	    	  	              factor2 = (float)((int)(ind - 9.333333333333334) % 14) / 4.666666666666667;
 	    	  	              Set_LED(j, 0 * factor1 + 255 * factor2, 0 * factor1 + 0 * factor2, 255 * factor1 + 0 * factor2);
