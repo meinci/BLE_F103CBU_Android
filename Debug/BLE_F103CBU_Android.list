@@ -2784,20 +2784,20 @@ int main(void)
     switch (*RxBuf){
  8001bee:	4b26      	ldr	r3, [pc, #152]	; (8001c88 <main+0xd4>)
  8001bf0:	781b      	ldrb	r3, [r3, #0]
- 8001bf2:	2b23      	cmp	r3, #35	; 0x23
+ 8001bf2:	2b91      	cmp	r3, #145	; 0x91
  8001bf4:	dcf6      	bgt.n	8001be4 <main+0x30>
- 8001bf6:	2b1e      	cmp	r3, #30
+ 8001bf6:	2b64      	cmp	r3, #100	; 0x64
  8001bf8:	da30      	bge.n	8001c5c <main+0xa8>
- 8001bfa:	2b0f      	cmp	r3, #15
+ 8001bfa:	2b2d      	cmp	r3, #45	; 0x2d
  8001bfc:	dc02      	bgt.n	8001c04 <main+0x50>
- 8001bfe:	2b0a      	cmp	r3, #10
- 8001c00:	da04      	bge.n	8001c0c <main+0x58>
+ 8001bfe:	2b00      	cmp	r3, #0
+ 8001c00:	dc04      	bgt.n	8001c0c <main+0x58>
  8001c02:	e03f      	b.n	8001c84 <main+0xd0>
- 8001c04:	3b14      	subs	r3, #20
- 8001c06:	2b05      	cmp	r3, #5
+ 8001c04:	3b32      	subs	r3, #50	; 0x32
+ 8001c06:	2b2d      	cmp	r3, #45	; 0x2d
  8001c08:	d8ec      	bhi.n	8001be4 <main+0x30>
  8001c0a:	e013      	b.n	8001c34 <main+0x80>
-		case 10 ... 15:
+		case 1 ... 45:
 
 		    rainbow_effect_left();
  8001c0c:	f7ff faa4 	bl	8001158 <rainbow_effect_left>
@@ -2823,7 +2823,7 @@ int main(void)
 			break;
  8001c32:	e027      	b.n	8001c84 <main+0xd0>
 
-		case 20 ... 25:
+		case 50 ... 95:
 		    rainbow_effect_right();
  8001c34:	f7ff fd08 	bl	8001648 <rainbow_effect_right>
 		    val = (*RxBuf -20)*9;
@@ -2848,7 +2848,7 @@ int main(void)
 			break;
  8001c5a:	e013      	b.n	8001c84 <main+0xd0>
 
-		case 30 ... 35:
+		case 100 ... 145:
 		    white_effect();
  8001c5c:	f7ff ff90 	bl	8001b80 <white_effect>
 		    val = (*RxBuf -30)*9;
