@@ -304,7 +304,7 @@ int main(void)
 		case 1 ... 45:
 
 		    rainbow_effect_left();
-	        val = (*RxBuf -10)*9;
+	        val = *RxBuf;
 		    Set_Brightness(val);
 		    //HAL_UART_Transmit_DMA(&huart1,(uint8_t*)ptr1, 1);
 		    //HAL_UART_Transmit(&huart1, (uint8_t*)ptr1, 1, 100);
