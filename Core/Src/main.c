@@ -301,7 +301,7 @@ int main(void)
     /* USER CODE BEGIN 3 */
     HAL_UART_Receive_DMA(&huart1, RxBuf, 1);
     switch (*RxBuf){
-		case 1 ... 45:
+		case 0 ... 45:
 
 		    rainbow_effect_left();
 	        val = *RxBuf;
@@ -313,7 +313,7 @@ int main(void)
 
 		case 50 ... 95:
 		    rainbow_effect_right();
-		    val = (*RxBuf -20)*9;
+		    val = *RxBuf -50;
 			Set_Brightness(val);
 			 //HAL_UART_Transmit_DMA(&huart1,(uint8_t*)ptr2, 1);
 			 //HAL_UART_Transmit(&huart1, (uint8_t*)ptr2, 1, 100);
@@ -322,7 +322,7 @@ int main(void)
 
 		case 100 ... 145:
 		    white_effect();
-		    val = (*RxBuf -30)*9;
+		    val = *RxBuf -100;
 			Set_Brightness(val);
 			//HAL_UART_Transmit_DMA(&huart1,(uint8_t*)ptr3, 1);
 			//HAL_UART_Transmit(&huart1, (uint8_t*)ptr3, 1, 100);
