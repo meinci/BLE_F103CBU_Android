@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := BLE_F103CBU_Android
+BUILD_ARTIFACT_NAME := STM32F103CBU_Bluetooth_Android
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-BLE_F103CBU_Android.elf \
+STM32F103CBU_Bluetooth_Android.elf \
 
 MAP_FILES += \
-BLE_F103CBU_Android.map \
+STM32F103CBU_Bluetooth_Android.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-BLE_F103CBU_Android.list \
+STM32F103CBU_Bluetooth_Android.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: BLE_F103CBU_Android.elf secondary-outputs
+main-build: STM32F103CBU_Bluetooth_Android.elf secondary-outputs
 
 # Tool invocations
-BLE_F103CBU_Android.elf BLE_F103CBU_Android.map: $(OBJS) $(USER_OBJS) C:\Users\HP\Desktop\BT_WS2812_ANDROID\UART_RingBuffer_DMA\STM32F103CBUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "BLE_F103CBU_Android.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\HP\Desktop\BT_WS2812_ANDROID\UART_RingBuffer_DMA\STM32F103CBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BLE_F103CBU_Android.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32F103CBU_Bluetooth_Android.elf STM32F103CBU_Bluetooth_Android.map: $(OBJS) $(USER_OBJS) C:\Users\HP\Desktop\STM32F103CBU_Bluetooth_Android_Clone\STM32F103CBU_Bluetooth_Android\STM32F103CBUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "STM32F103CBU_Bluetooth_Android.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\HP\Desktop\STM32F103CBU_Bluetooth_Android_Clone\STM32F103CBU_Bluetooth_Android\STM32F103CBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103CBU_Bluetooth_Android.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +70,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-BLE_F103CBU_Android.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "BLE_F103CBU_Android.list"
+STM32F103CBU_Bluetooth_Android.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "STM32F103CBU_Bluetooth_Android.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) BLE_F103CBU_Android.elf BLE_F103CBU_Android.list BLE_F103CBU_Android.map default.size.stdout
+	-$(RM) STM32F103CBU_Bluetooth_Android.elf STM32F103CBU_Bluetooth_Android.list STM32F103CBU_Bluetooth_Android.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

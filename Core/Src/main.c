@@ -170,7 +170,7 @@ static uint8_t rainbow_effect_left() {
 	    // Steps: 13 - Delay: 54
 	    // Colors: 3 (255.0.0, 0.255.0, 0.0.255)
 	    // Options: rainbowlen=8, toLeft=true,
-	//  if(millis() - strip_0.effStart < 54 * (strip_0.effStep)) return 0x00;
+	  //if(millis() - strip_0.effStart < 54 * (strip_0.effStep)) return 0x00;
 
 	  float factor1, factor2;
 	  uint16_t ind;

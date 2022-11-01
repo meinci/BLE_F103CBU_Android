@@ -1,5 +1,5 @@
 
-BLE_F103CBU_Android.elf:     file format elf32-littlearm
+STM32F103CBU_Bluetooth_Android.elf:     file format elf32-littlearm
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
@@ -39,11 +39,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   0000c29f  00000000  00000000  000454e4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0008abac  00000000  00000000  00051783  2**0
+ 18 .debug_str    0008abca  00000000  00000000  00051783  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  000dc32f  2**0
+ 19 .comment      00000050  00000000  00000000  000dc34d  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00003748  00000000  00000000  000dc380  2**2
+ 20 .debug_frame  00003748  00000000  00000000  000dc3a0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1619,7 +1619,7 @@ static uint8_t rainbow_effect_left() {
  800115c:	b084      	sub	sp, #16
  800115e:	af00      	add	r7, sp, #0
 	    // Options: rainbowlen=8, toLeft=true,
-	//  if(millis() - strip_0.effStart < 54 * (strip_0.effStep)) return 0x00;
+	  //if(millis() - strip_0.effStart < 54 * (strip_0.effStep)) return 0x00;
 
 	  float factor1, factor2;
 	  uint16_t ind;
