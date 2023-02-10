@@ -76,9 +76,7 @@ uint8_t LED_Mod[MAX_LED][8];  // for brightness
 uint8_t RxBuf[1];
 uint8_t MainBuf[1];
 uint16_t pwmData[(24*MAX_LED)+50];
-/*uint8_t eff1[]={'A'};
-uint8_t eff2[]={'B'};
-uint8_t eff3[]={'C'};*/
+
 char eff1[] = {'A'};
 char *ptr1 = eff1;
 char eff2[] = {'B'};
