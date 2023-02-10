@@ -60,8 +60,8 @@ all: main-build
 main-build: STM32F103CBU_Bluetooth_Android.elf secondary-outputs
 
 # Tool invocations
-STM32F103CBU_Bluetooth_Android.elf STM32F103CBU_Bluetooth_Android.map: $(OBJS) $(USER_OBJS) C:\Users\HP\Desktop\STM32F103CBU_Bluetooth_Android_Clone\STM32F103CBU_Bluetooth_Android\STM32F103CBUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "STM32F103CBU_Bluetooth_Android.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\HP\Desktop\STM32F103CBU_Bluetooth_Android_Clone\STM32F103CBU_Bluetooth_Android\STM32F103CBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103CBU_Bluetooth_Android.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32F103CBU_Bluetooth_Android.elf STM32F103CBU_Bluetooth_Android.map: $(OBJS) $(USER_OBJS) C:\Users\HP\Desktop\STM32F103CBU_Bluetooth_Android\STM32F103CBU_Bluetooth_Android\STM32F103CBUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "STM32F103CBU_Bluetooth_Android.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\HP\Desktop\STM32F103CBU_Bluetooth_Android\STM32F103CBU_Bluetooth_Android\STM32F103CBUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32F103CBU_Bluetooth_Android.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
